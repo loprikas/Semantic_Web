@@ -28,4 +28,10 @@ contains images for samples and further explanations
 
 # Sample images
 
+## data visualized in table format
+
 ![data in table, example](img/data_visualized.png)
+
+## final result (ontology graph with loaded test data) visualized with WebVOWL
+
+![ontology graph](img/final_transformation.svg)
