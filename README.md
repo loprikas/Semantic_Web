@@ -20,5 +20,11 @@ contains short versions of the raw data tables, which I cropped to 100 rows to p
 
 ## scripts
 
-contains different stages of the transformation scripts. Some of the script is inspired by Paulo Di Ricardos sample script, the latest version is also refined by AI. 
+contains different stages of the transformation scripts. Some of the script is inspired by Paulo Di Ricardos sample script, the latest version is also refined by AI.
+
+## img
+
+contains images for samples and further explanations
+
+# Sample images
 
