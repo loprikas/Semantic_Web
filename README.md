@@ -28,3 +28,4 @@ contains images for samples and further explanations
 
 # Sample images
 
+![data in table, example](img/data_visualized.png)
