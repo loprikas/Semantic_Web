@@ -12,9 +12,11 @@ Then I wrote a python script that filled the ontology with the data from the tsv
 
 contains the different stages of the ontology, which I finetuned in the process. The first versions came up in the seminars, the later versions I wrote while writing the URI definiions in the transformation script. 
 
+
 ## data
 
 contains short versions of the raw data tables, which I cropped to 100 rows to process and do tests with them efiiciently. 
+
 
 ##scripts
 
