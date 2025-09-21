@@ -34,4 +34,6 @@ contains images for samples and further explanations
 
 ## final result (ontology graph with loaded test data) visualized with WebVOWL
 
+Can also be loaded in better quality and more data by uploading the respective .ttl file to https://service.tib.eu/webvowl/
+
 ![ontology graph](img/final_transformation.svg)
