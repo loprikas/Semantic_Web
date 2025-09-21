@@ -1,0 +1,39 @@
+@prefix : <http://imdb.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://imdb.org/ontology#> .
+
+<http://imdb.org/ontology#> rdf:type owl:Ontology ;
+    <http://purl.org/dc/terms/creator> "Pascal Henrici" ;
+    <http://purl.org/dc/terms/title> "IMDb Ontology" ;
+    <http://purl.org/dc/terms/description> "Ontology for representing IMDb titles, persons, professions, roles, ratings, and episodes." ;
+    owl:versionInfo "1.0.0" .
+
+### Klassen
+
+:Title rdf:type owl:Class ; rdfs:label "Title" ; rdfs:comment "A movie, TV episode, or other title." .
+:Person rdf:type owl:Class ; rdfs:label "Person" ; rdfs:comment "An individual involved in a production." .
+:Episode rdf:type owl:Class ; rdfs:subClassOf :Title ; rdfs:label "Episode" ; rdfs:comment "A single TV episode." .
+:Rating rdf:type owl:Class ; rdfs:label "Rating" ; rdfs:comment "User rating of a title." .
+:AlternativeTitle rdf:type owl:Class ; rdfs:label "AlternativeTitle" ; rdfs:comment "Localized or alternate titles." .
+:Role rdf:type owl:Class ; rdfs:label "Role" ; rdfs:comment "Participation of a person in a title (e.g. actor, director)." .
+:Genre rdf:type owl:Class ; rdfs:label "Genre" ; rdfs:comment "Genre classification (e.g. Comedy, Drama)." .
+### Objektproperties
+
+:hasTitleType rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range xsd:string .
+:hasOriginalTitle rdf:type owl:DatatypeProperty ; rdfs:domain :Title ; rdfs:range xsd:string .
+:hasAlternativeTitle rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range :AlternativeTitle .
+:hasEpisode rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range :Episode .
+:hasDirector rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range :Person .
+:hasWriter rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range :Person .
+:hasActor rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range :Person .
+:hasRating rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range :Rating .
+:hasRole rdf:type owl:ObjectProperty ; rdfs:domain :Person ; rdfs:range :Role .
+:hasGenre rdf:type owl:ObjectProperty ; rdfs:domain :Title ; rdfs:range :Genre .
+:hasProfession rdf:type owl:DatatypeProperty ; rdfs:domain :Person ; rdfs:range xsd:string .
+:hasKnownFor rdf:type owl:ObjectProperty ; rdfs:domain :Person ; rdfs:range :Title .
+
+

@@ -1,0 +1,69 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix imd:   <http://example.org/imdb#> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+
+###############################################################################
+# Ontology Metadata
+###############################################################################
+imd:  a owl:Ontology ;
+    dc:title       "IMDb Ontology" ;
+    dc:creator     "Pascal Henrici" ;
+    dc:description "Ontology for IMDb" ;
+    owl:versionInfo "6.0" .
+
+###############################################################################
+# Classes
+###############################################################################
+imd:Title        a owl:Class ; rdfs:label "Title" .
+imd:TVSeries     a owl:Class ; rdfs:label "TV Series" ; rdfs:subClassOf imd:Title .
+imd:Episode      a owl:Class ; rdfs:label "Episode"   ; rdfs:subClassOf imd:Title .
+imd:Person       a owl:Class ; rdfs:label "Person" .
+imd:Role         a owl:Class ; rdfs:label "Role" .
+imd:Rating       a owl:Class ; rdfs:label "Rating" .
+imd:AlternateTitle a owl:Class ; rdfs:label "Alternate Title" .
+###############################################################################
+# Object Properties
+###############################################################################
+imd:hasRole        a owl:ObjectProperty ; rdfs:domain imd:Person ;    rdfs:range imd:Role ;      rdfs:label "hasRole" .
+imd:roleIn         a owl:ObjectProperty ; rdfs:domain imd:Role ;      rdfs:range imd:Title ;     rdfs:label "roleOf" .
+imd:knownFor       a owl:ObjectProperty ; rdfs:domain imd:Person ;    rdfs:range imd:Title ;     rdfs:label "knownFor" .
+imd:hasRating      a owl:ObjectProperty ; rdfs:domain imd:Title ;     rdfs:range imd:Rating ;    rdfs:label "hasRating" .
+imd:hasAlternateTitle a owl:ObjectProperty ; rdfs:domain imd:Title ;   rdfs:range imd:AlternateTitle ; rdfs:label "hasAlternateTitle" .
+imd:parentSeries   a owl:ObjectProperty ; rdfs:domain imd:Episode ;   rdfs:range imd:TVSeries ;  rdfs:label "parentSeries" .
+###############################################################################
+# Datatype Properties
+###############################################################################
+# Title
+imd:titleID         a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:string  ; rdfs:label "titleID" .
+imd:primaryTitle    a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:string  ; rdfs:label "primaryTitle" .
+imd:originalTitle   a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:string  ; rdfs:label "originalTitle" .
+imd:isAdult         a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:boolean ; rdfs:label "isAdult" .
+imd:startYear       a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:gYear   ; rdfs:label "startYear" .
+imd:endYear         a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:gYear   ; rdfs:label "endYear" .
+imd:runtimeMinutes  a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:integer ; rdfs:label "runtimeMinutes" .
+imd:genre           a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:string  ; rdfs:label "genre" ;.
+imd:type            a owl:DatatypeProperty ; rdfs:domain imd:Title  ; rdfs:range xsd:string  ; rdfs:label "type" ;.
+# Rating
+imd:averageRating   a owl:DatatypeProperty ; rdfs:domain imd:Rating ; rdfs:range xsd:decimal ; rdfs:label "averageRating" .
+imd:numVotes        a owl:DatatypeProperty ; rdfs:domain imd:Rating ; rdfs:range xsd:integer ; rdfs:label "numVotes" .
+# Person
+imd:personID        a owl:DatatypeProperty ; rdfs:domain imd:Person ; rdfs:range xsd:string  ; rdfs:label "personID" .
+imd:birthYear       a owl:DatatypeProperty ; rdfs:domain imd:Person ; rdfs:range xsd:gYear   ; rdfs:label "birthYear" .
+imd:deathYear       a owl:DatatypeProperty ; rdfs:domain imd:Person ; rdfs:range xsd:gYear   ; rdfs:label "deathYear" .
+imd:gender          a owl:DatatypeProperty ; rdfs:domain imd:Person ; rdfs:range xsd:string  ; rdfs:label "gender" .
+# Alternate Title
+imd:order           a owl:DatatypeProperty ; rdfs:domain imd:AlternateTitle ; rdfs:range xsd:integer ; rdfs:label "order" .
+imd:alternateTitle  a owl:DatatypeProperty ; rdfs:domain imd:AlternateTitle ; rdfs:range xsd:string  ; rdfs:label "alternateTitle" .
+imd:region          a owl:DatatypeProperty ; rdfs:domain imd:AlternateTitle ; rdfs:range xsd:string  ; rdfs:label "region" .
+imd:language        a owl:DatatypeProperty ; rdfs:domain imd:AlternateTitle ; rdfs:range xsd:string  ; rdfs:label "language" .
+# Episode
+imd:seasonNumber    a owl:DatatypeProperty ; rdfs:domain imd:Episode ; rdfs:range xsd:integer ; rdfs:label "seasonNumber" .
+imd:episodeNumber   a owl:DatatypeProperty ; rdfs:domain imd:Episode ; rdfs:range xsd:integer ; rdfs:label "episodeNumber" .
+# TV Series:
+imd:seriesTitle     a owl:DatatypeProperty ; rdfs:domain imd:TVSeries ; rdfs:range xsd:string ; rdfs:label "seriesTitle" .
+# Role:
+imd:roleName        a owl:DatatypeProperty ; rdfs:domain imd:Role   ; rdfs:range xsd:string ; rdfs:label "roleName" .
+
