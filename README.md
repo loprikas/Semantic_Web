@@ -10,7 +10,7 @@ Then I wrote a python script that filled the ontology with the data from the tsv
 
 ## ontologies
 
-contains the different stages of the ontology, which I finetuned in the process. The first versions came up in the seminars, the later versions I wrote while writing the URI definiions in the transformation script. 
+contains the different stages of the ontology, which I finetuned in the process. The first versions came up in the seminars, the later versions I wrote while writing the URI definitions in the transformation script. 
 
 
 ## data
@@ -20,7 +20,7 @@ contains short versions of the raw data tables, which I cropped to 100 rows to p
 
 ## scripts
 
-contains different stages of the transformation scripts. Some of the script is inspired by Paulo Di Ricardos sample script, the latest version is also refined by AI.
+contains different stages of the transformation scripts. Some of the script is inspired by Paulo Di Ricardos sample script, the latest version is also refined by AI. https://gitlab.dit.htwk-leipzig.de/paulo.carmo/f1worldchampionship
 
 ## img
 
@@ -28,3 +28,12 @@ contains images for samples and further explanations
 
 # Sample images
 
+## data visualized in table format
+
+![data in table, example](img/data_visualized.png)
+
+## final result (ontology graph with loaded test data) visualized with WebVOWL
+
+Can also be loaded in better quality and more data by uploading the respective .ttl file to https://service.tib.eu/webvowl/
+
+![ontology graph](img/final_transformation.svg)
