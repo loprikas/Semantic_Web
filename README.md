@@ -8,6 +8,10 @@ Then I wrote a python script that filled the ontology with the data from the tsv
 
 # Directories
 
+## notebook and references
+
+Here you can find a jupyter notebook explaining the whole process and the images that are referenced within the notebook.
+
 ## ontologies
 
 contains the different stages of the ontology, which I finetuned in the process. The first versions came up in the seminars, the later versions I wrote while writing the URI definitions in the transformation script. 
